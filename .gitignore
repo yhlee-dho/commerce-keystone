@@ -1,3 +1,13 @@
+node_modules/
+.DS_Store
+*.log
+.next/
+.build/
+layout.md
+variables.env
+*.env
+.keystone
+
 # Logs
 logs
 *.log
