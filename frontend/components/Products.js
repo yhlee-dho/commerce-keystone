@@ -28,8 +28,8 @@ const ProductsListStyles = styled.div`
 export default function Products() {
   // useQuery hook to fetch data by using graphql query
   const { data, error, loading } = useQuery(ALL_PRODUCTS_QUERY);
-  console.log('-----data, error, loading-----');
-  console.log(data, error, loading);
+  // console.log('-----data, error, loading-----');
+  // console.log(data, error, loading);
 
   // based on the status of the data being queried, message can be altered
   if (loading) return <p>Loading...</p>;
