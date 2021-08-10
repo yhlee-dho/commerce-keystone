@@ -2,27 +2,27 @@ import Document, { Html, Head, NextScript, Main } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
-	// Server Side Rendering for styled-components
-	// https://styled-components.com/docs/advanced
-	static getInitialProps({ renderPage }) {
-		const sheet = new ServerStyleSheet();
-		const page = renderPage(
-			App => props => sheet.collectStyles(<App {...props} />)
-		);
-		const styleTags = sheet.getStyleElement();
-		console.log(styleTags);
-		return { ...page, styleTags };
-	}
+  // Server Side Rendering for styled-components
+  // https://styled-components.com/docs/advanced
+  static getInitialProps({ renderPage }) {
+    const sheet = new ServerStyleSheet();
+    const page = renderPage(
+      (App) => (props) => sheet.collectStyles(<App {...props} />)
+    );
+    const styleTags = sheet.getStyleElement();
+    // console.log(styleTags);
+    return { ...page, styleTags };
+  }
 
-	render() {
-		return (
-			<Html lang='en-US'>
-				<Head />
-				<body>
-					<Main />
-					<NextScript />
-				</body>
-			</Html>
-		);
-	}
+  render() {
+    return (
+      <Html lang="en-US">
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
 }
