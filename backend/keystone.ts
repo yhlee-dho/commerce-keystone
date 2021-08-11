@@ -9,6 +9,7 @@ import { Product } from './schemas/Product';
 import { ProductImage } from './schemas/ProductImage';
 import 'dotenv/config';
 import { insertSeedData } from './seed-data';
+import { sendPasswordResetEmail } from './lib/mail';
 
 // set database url for project the || is for when the user has their own local database set up
 const databaseURL =
@@ -31,7 +32,9 @@ const { withAuth } = createAuth({
   },
   passwordResetLink: {
     async sendToken(args) {
-      console.log(args);
+      // console.log(args);
+      // send password reset email here
+      await sendPasswordResetEmail(args.token, args.identity);
     },
   },
 });
