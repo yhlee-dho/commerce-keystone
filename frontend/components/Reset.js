@@ -36,7 +36,7 @@ export default function Reset({ token }) {
   const successfulError = data?.redeemUserPasswordResetToken?.code
     ? data?.redeemUserPasswordResetToken
     : undefined;
-  console.log(`successfulError: ${successfulError}`);
+  // console.log(`successfulError: ${successfulError}`);
   async function handleSubmit(e) {
     e.preventDefault(); // stop the form from submitting
     console.log(inputs);
