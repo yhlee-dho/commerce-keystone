@@ -10,6 +10,7 @@ import { ProductImage } from './schemas/ProductImage';
 import 'dotenv/config';
 import { insertSeedData } from './seed-data';
 import { sendPasswordResetEmail } from './lib/mail';
+import { CartItem } from './schemas/CartItem';
 
 // set database url for project the || is for when the user has their own local database set up
 const databaseURL =
@@ -63,6 +64,7 @@ export default withAuth(
       User,
       Product,
       ProductImage,
+      CartItem,
     }),
     ui: {
       // TODO: change this for roles
