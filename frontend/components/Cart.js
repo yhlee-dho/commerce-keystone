@@ -1,11 +1,11 @@
-import styled from 'styled-components';
-import CartStyles from './styles/CartStyles';
-import CloseButton from './styles/CloseButton';
-import { useUser } from './User';
-import Supreme from './styles/Supreme';
-import formatMoney from '../lib/formatMoney';
-import calcTotalPrice from '../lib/calcTotalPrice';
-import { useCart } from '../lib/cartState';
+import styled from 'styled-components'; //
+import CartStyles from './styles/CartStyles'; //
+import CloseButton from './styles/CloseButton'; //
+import { useUser } from './User'; //
+import Supreme from './styles/Supreme'; //
+import formatMoney from '../lib/formatMoney'; //
+import calcTotalPrice from '../lib/calcTotalPrice'; //
+import { useCart } from '../lib/cartState'; //
 
 const CartItemStyles = styled.li`
   padding: 1rem 0;
@@ -38,7 +38,7 @@ function CartItem({ cartItem }) {
           {formatMoney(product.price * cartItem.quantity)}-
           <em>
             {cartItem.quantity} &times; {formatMoney(product.price)}
-            each
+            &nbsp;each
           </em>
         </p>
       </div>
