@@ -12,6 +12,8 @@ import 'dotenv/config';
 import { insertSeedData } from './seed-data';
 import { sendPasswordResetEmail } from './lib/mail';
 import { extendGraphqlSchema } from './mutations/index';
+import { OrderItem } from './schemas/OrderItem';
+import { Order } from './schemas/Order';
 
 function check(name: string) {}
 // set database url for project the || is for when the user has their own local database set up
@@ -67,6 +69,8 @@ export default withAuth(
       Product,
       ProductImage,
       CartItem,
+      OrderItem,
+      Order,
     }),
     extendGraphqlSchema, // for custom mutations
     ui: {
