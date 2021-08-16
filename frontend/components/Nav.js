@@ -11,6 +11,8 @@ export default function Nav() {
   const { openCart } = useCart();
   return (
     <NavStyles>
+      {/* adding .env.local to frontend */}
+      {/* {process.env.NEXT_PUBLIC_STRIPE_KEY} */}
       <Link href="/products">Products</Link>
       {user && (
         <>

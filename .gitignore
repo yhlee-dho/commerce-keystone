@@ -6,6 +6,7 @@ node_modules/
 layout.md
 variables.env
 *.env
+*.env.local
 .keystone
 
 # Logs

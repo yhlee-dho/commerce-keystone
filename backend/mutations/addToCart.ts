@@ -10,8 +10,8 @@ async function addToCart(
   { productId }: { productId: string },
   context: KeystoneContext
 ): Promise<CartItemCreateInput> {
-  console.log('Adding To Cart!!!');
-  console.log(productId);
+  // console.log('Adding To Cart!!!');
+  // console.log(productId);
   // 1. Query the current user - see if they are signed in
   const sesh = context.session as Session;
   if (!sesh.itemId) {
@@ -23,7 +23,7 @@ async function addToCart(
     resolveFields: 'id,quantity'
 
   });
-  console.log(allCartItems);
+  // console.log(allCartItems);
 
   const [existingCartItem] = allCartItems;
 
