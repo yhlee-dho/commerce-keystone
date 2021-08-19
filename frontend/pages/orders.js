@@ -10,7 +10,7 @@ import OrderItemStyles from '../components/styles/OrderItemStyles';
 const USER_ORDERS_QUERY = gql`
   query USER_ORDERS_QUERY {
     allOrders {
-      id
+      # id
       charge
       total
       user {
@@ -56,7 +56,7 @@ export default function OrdersPage() {
       <OrderUl>
         {allOrders.map((order) => (
           <OrderItemStyles>
-            <Link href={`/order/${order.id}`}>
+            <Link href={`/order/${order.id}`} key={order.id}>
               <a>
                 <div className="order-meta">
                   <p>
