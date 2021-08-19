@@ -14,6 +14,8 @@ import { sendPasswordResetEmail } from './lib/mail';
 import { extendGraphqlSchema } from './mutations/index';
 import { OrderItem } from './schemas/OrderItem';
 import { Order } from './schemas/Order';
+import { Role } from './schemas/Role';
+import { permissionsList } from './schemas/fields';
 
 function check(name: string) {}
 // set database url for project the || is for when the user has their own local database set up
@@ -71,6 +73,7 @@ export default withAuth(
       CartItem,
       OrderItem,
       Order,
+      Role,
     }),
     extendGraphqlSchema, // for custom mutations
     ui: {
@@ -83,7 +86,8 @@ export default withAuth(
     // TODO: Add session values here
     session: withItemData(statelessSessions(sessionConfig), {
       // GraphQL Query
-      User: 'id name email',
+      // transferring the permissions list into a string for the gql query, ' ' separates each permission.
+      User: `id name email role { ${permissionsList.join(' ')} }`,
     }),
   })
 );
